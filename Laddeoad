@@ -42,7 +42,7 @@ bulletinsFrame.Position = UDim2.new(0, 0, 0, 50)
 bulletinsFrame.BackgroundTransparency = 1  -- Make it transparent
 bulletinsFrame.Parent = frame
 
--- Title of Updates (e.g. "UPDATEv1")
+-- Title of Updates (e.g. "UPDATE v2.1")
 local updateTitleLabel = Instance.new("TextLabel")
 updateTitleLabel.Text = "UPDATEv1"
 updateTitleLabel.Size = UDim2.new(1, 0, 0, 20)
@@ -57,7 +57,7 @@ updateTitleLabel.Parent = bulletinsFrame
 
 -- Bullet points under the title
 local bulletPointsLabel = Instance.new("TextLabel")
-bulletPointsLabel.Text = "- New cars\n- New phones\n- New locations"  -- Example text
+bulletPointsLabel.Text = "- fixed script not showing bug[👾]\n- brand new gui[🎉]\n- free chains[👀]\n- muchmore[🔥]"  -- Example text
 bulletPointsLabel.Size = UDim2.new(1, 0, 1, 0)
 bulletPointsLabel.Position = UDim2.new(0, 0, 0, 20)
 bulletPointsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
