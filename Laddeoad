@@ -1,0 +1,129 @@
+-- Loading Screen Script
+
+local player = game.Players.LocalPlayer
+local playerGui = player.PlayerGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = playerGui
+
+-- Create blur effect
+local blurEffect = Instance.new("BlurEffect")
+blurEffect.Size = 25
+blurEffect.Parent = game.Lighting
+
+-- Create the GUI elements
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 400, 0, 220)  -- Adjusted height for new content
+frame.Position = UDim2.new(0.5, -200, 0.5, -110)
+frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame.BackgroundTransparency = 0.5
+frame.Parent = screenGui
+
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 12)
+corner.Parent = frame
+
+-- Title Label (Improved professional text)
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Text = "Unveil the best SL2 script"  -- Top text
+titleLabel.Size = UDim2.new(1, 0, 0, 40)
+titleLabel.Position = UDim2.new(0, 0, 0, 10)
+titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+titleLabel.TextScaled = false  -- Disable TextScaled
+titleLabel.BackgroundTransparency = 1
+titleLabel.Font = Enum.Font.GothamSemibold  -- Modern, professional font
+titleLabel.TextSize = 28  -- Set fixed TextSize
+titleLabel.TextStrokeTransparency = 0.8  -- Subtle text outline for clarity
+titleLabel.Parent = frame
+
+-- Bulletins Frame (For update messages)
+local bulletinsFrame = Instance.new("Frame")
+bulletinsFrame.Size = UDim2.new(1, 0, 0, 60)
+bulletinsFrame.Position = UDim2.new(0, 0, 0, 50)
+bulletinsFrame.BackgroundTransparency = 1  -- Make it transparent
+bulletinsFrame.Parent = frame
+
+-- Title of Updates (e.g. "UPDATEv1")
+local updateTitleLabel = Instance.new("TextLabel")
+updateTitleLabel.Text = "UPDATEv1"
+updateTitleLabel.Size = UDim2.new(1, 0, 0, 20)
+updateTitleLabel.Position = UDim2.new(0, 0, 0, 0)
+updateTitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+updateTitleLabel.TextScaled = false  -- Disable TextScaled
+updateTitleLabel.BackgroundTransparency = 1
+updateTitleLabel.Font = Enum.Font.GothamBold
+updateTitleLabel.TextSize = 24  -- Set fixed TextSize
+updateTitleLabel.TextStrokeTransparency = 0.8
+updateTitleLabel.Parent = bulletinsFrame
+
+-- Bullet points under the title
+local bulletPointsLabel = Instance.new("TextLabel")
+bulletPointsLabel.Text = "- New cars\n- New phones\n- New locations"  -- Example text
+bulletPointsLabel.Size = UDim2.new(1, 0, 1, 0)
+bulletPointsLabel.Position = UDim2.new(0, 0, 0, 20)
+bulletPointsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+bulletPointsLabel.TextScaled = false  -- Disable TextScaled
+bulletPointsLabel.BackgroundTransparency = 1
+bulletPointsLabel.Font = Enum.Font.Gotham
+bulletPointsLabel.TextSize = 18  -- Set fixed TextSize
+bulletPointsLabel.TextStrokeTransparency = 0.8
+bulletPointsLabel.Parent = bulletinsFrame
+
+-- Progress Bar Frame (Moved down slightly)
+local progressBarFrame = Instance.new("Frame")
+progressBarFrame.Size = UDim2.new(0, 380, 0, 20)
+progressBarFrame.Position = UDim2.new(0, 10, 0, 160)  -- Moved it down
+progressBarFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+progressBarFrame.Parent = frame
+
+-- Apply UICorner to Progress Bar Frame (for smooth corners)
+local progressBarFrameCorner = Instance.new("UICorner")
+progressBarFrameCorner.CornerRadius = UDim.new(0, 10)  -- Apply smooth corners to the progress bar frame
+progressBarFrameCorner.Parent = progressBarFrame
+
+local progressBar = Instance.new("Frame")
+progressBar.Size = UDim2.new(0, 0, 1, 0)
+progressBar.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+progressBar.Parent = progressBarFrame
+
+-- Apply UICorner to Progress Bar (for smooth corners)
+local progressBarCorner = Instance.new("UICorner")
+progressBarCorner.CornerRadius = UDim.new(0, 10)  -- Apply smooth corners to the progress bar itself
+progressBarCorner.Parent = progressBar
+
+-- Variables to control loading
+local loadingTime = 4  -- Time for the loading bar to complete (4 seconds)
+local removeTime = 7  -- Time when the loading screen will disappear (7 seconds)
+
+-- Smoothly update loading bar (4 seconds)
+local function updateLoadingBar()
+    local elapsedTime = 0
+    while elapsedTime < loadingTime do
+        local progress = elapsedTime / loadingTime
+        progressBar.Size = UDim2.new(progress, 0, 1, 0)  -- Smoothly resize the bar
+        elapsedTime = elapsedTime + 0.1
+        wait(0.1)  -- Update every 0.1 seconds for smoother animation
+    end
+    -- Ensure the progress bar is fully filled at the end
+    progressBar.Size = UDim2.new(1, 0, 1, 0)
+end
+
+-- Function to remove the blur and GUI
+local function removeLoadingScreen()
+    -- Wait for the full remove time (7 seconds)
+    wait(removeTime)
+
+    -- Remove blur effect
+    blurEffect:Destroy()
+
+    -- Remove loading screen GUI
+    screenGui:Destroy()
+
+    -- Insert the script from Pastebin (after loading screen)
+    loadstring(game:HttpGet("https://pastebin.com/raw/2wRVPBpY"))()
+end
+
+-- Start the loading screen functionality
+coroutine.wrap(updateLoadingBar)()
+
+-- Start the removal after the full loading time (7 seconds)
+removeLoadingScreen()
