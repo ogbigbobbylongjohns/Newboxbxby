@@ -57,7 +57,7 @@ updateTitleLabel.Parent = bulletinsFrame
 
 -- Bullet points under the title
 local bulletPointsLabel = Instance.new("TextLabel")
-bulletPointsLabel.Text = "- fixed script not showing bug[👾]\n- brand new gui[🎉]\n- free chains[👀]\n- muchmore[🔥]"  -- Example text
+bulletPointsLabel.Text = "- fixed script not showing bug[👾]\n- brand new gui[🎉]\n- free chains[👀]\n- more being added currently[🔥]"  -- Example text
 bulletPointsLabel.Size = UDim2.new(1, 0, 1, 0)
 bulletPointsLabel.Position = UDim2.new(0, 0, 0, 20)
 bulletPointsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
