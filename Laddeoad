@@ -65,6 +65,7 @@ updateTitleLabel.Parent = bulletinsFrame
 -- Update Details (Fixed Text Not Showing)
 local bulletPointsLabel = Instance.new("TextLabel")
 bulletPointsLabel.Text = [[
+⚙️ Whole new ui make over 🎉
 ✅ Fixed script not showing bug 👾
 🔥 Auto skittles added
 👀 Free chains unlocked
