@@ -52,7 +52,7 @@ bulletinsFrame.Parent = frame
 
 -- Update Title
 local updateTitleLabel = Instance.new("TextLabel")
-updateTitleLabel.Text = "🔄 UPDATE v2.2"
+updateTitleLabel.Text = "🔄 UPDATE v2.4"
 updateTitleLabel.Size = UDim2.new(1, 0, 0, 20)
 updateTitleLabel.Position = UDim2.new(0, 0, 0, 0)
 updateTitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
