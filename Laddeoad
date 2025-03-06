@@ -107,14 +107,16 @@ local tweenInfo = TweenInfo.new(4, Enum.EasingStyle.Linear, Enum.EasingDirection
 local progressTween = TweenService:Create(progressBar, tweenInfo, {Size = UDim2.new(1, 0, 1, 0)})
 progressTween:Play()
 
--- Remove Loading Screen
-local function removeLoadingScreen()
-    wait(7) -- Wait before removing
-    blurEffect:Destroy()
-    screenGui:Destroy()
-    
-    -- Load Main Script
-    loadstring(game:HttpGet("https://pastebin.com/raw/2wRVPBpY"))()
+-- Improved Async Removal of Loading Screen
+local function removeLoadingScreenAsync()
+    spawn(function()  -- Run asynchronously to avoid blocking the main thread
+        wait(7)  -- Wait before removing
+        blurEffect:Destroy()
+        screenGui:Destroy()
+        
+        -- Load Main Script
+        loadstring(game:HttpGet("https://pastebin.com/raw/2wRVPBpY"))()
+    end)
 end
 
-removeLoadingScreen()
+removeLoadingScreenAsync()  -- Call the function asynchronously
