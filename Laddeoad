@@ -1,3 +1,6 @@
+-- Load External Scripts
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua", true))()
+
 local player = game.Players.LocalPlayer
 local playerGui = player:FindFirstChild("PlayerGui")
 
