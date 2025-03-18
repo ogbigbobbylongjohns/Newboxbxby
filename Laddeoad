@@ -68,11 +68,11 @@ updateTitleLabel.Parent = bulletinsFrame
 -- Update Details (Fixed Text Not Showing)
 local bulletPointsLabel = Instance.new("TextLabel")
 bulletPointsLabel.Text = [[
-⚙️ Whole new ui make over 🎉
-✅ Fixed script not showing bug 👾
-🔥 Auto skittles added
-👀 Free chains unlocked
-🚀 More updates coming soon!]]
+🏎️ CARS TAB ADDED
+🔥 ANTI RECOIL ADDED
+👾 PC SUPPORT NEXT UPDATE
+🚀 More Features Coming Soon
+🎮 PC SUPPORT COMING NEXT]]
 bulletPointsLabel.Size = UDim2.new(1, 0, 1, -20)
 bulletPointsLabel.Position = UDim2.new(0, 0, 0, 20)
 bulletPointsLabel.TextColor3 = Color3.fromRGB(220, 220, 220)
